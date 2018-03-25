@@ -1,0 +1,11 @@
+target/
+build/
+
+# intellij idea
+*.log
+*.iml
+*.ipr
+*.iws
+.idea
+
+*.class

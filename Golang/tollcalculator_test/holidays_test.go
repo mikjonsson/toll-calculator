@@ -7,10 +7,9 @@ import (
 	"github.com/mikjonsson/toll-calculator/Golang/tollcalculator"
 )
 
-// Is this test realyl useful?
-func Test2018Holidays(t *testing.T) {
-	var holidays2018 = tollcalculator.Holidays{1, 6, 89, 91, 92, 121, 130, 140, 157, 174, 307, 359, 360}
+var holidays2018 = tollcalculator.Holidays{1, 6, 89, 91, 92, 121, 130, 140, 157, 174, 307, 359, 360}
 
+func Test2018Holidays(t *testing.T) {
 	holidays := tollcalculator.HolidaysForYear(2018)
 
 	if !reflect.DeepEqual(holidays, holidays2018) {
@@ -31,5 +30,19 @@ func Test2018Had13Holidays(t *testing.T) {
 
 	if len(holidays) != 13 {
 		t.Errorf("Expected holidays with length 13 but got length %d", len(holidays))
+	}
+}
+
+func TestIsHoliday(t *testing.T) {
+	// Consider splitting up test
+	year := 2018
+	for _, day := range holidays2018 {
+		if !tollcalculator.IsHolliday(day, year) {
+			t.Errorf("Expected %d to be a holiday in %d", day, year)
+		}
+	}
+
+	if tollcalculator.IsHolliday(2, year) {
+		t.Errorf("Expected %d to not be a holiday in %d", 2, year)
 	}
 }

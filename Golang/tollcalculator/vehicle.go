@@ -1,6 +1,10 @@
 package tollcalculator
 
-import "time"
+import (
+	"time"
+
+	"github.com/google/uuid"
+)
 
 // VehicleType identifier
 type VehicleType int
@@ -19,7 +23,7 @@ const (
 
 // Vehicle defintion
 type Vehicle struct {
-	id              string
+	id              uuid.UUID
 	vehicleType     VehicleType
 	tollFree        bool
 	lastCharged     time.Time

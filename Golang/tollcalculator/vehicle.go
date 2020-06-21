@@ -11,8 +11,8 @@ type VehicleType int
 
 // Vehicle types
 const (
-	UnknownVehicle VehicleType = -1
-	Car            VehicleType = iota
+	UnknownVehicle VehicleType = iota
+	Car
 	Motorbike
 	Tractor
 	Emergency
@@ -23,13 +23,12 @@ const (
 
 // Vehicle defintion
 type Vehicle struct {
-	id              uuid.UUID
-	vehicleType     VehicleType
-	tollFree        bool
-	lastCharged     time.Time
-	currentDailyFee int
+	ID              uuid.UUID
+	VehicleType     VehicleType
+	LastCharged     time.Time
+	CurrentDailyFee int
 }
 
-func isTollFreeVehicleType(vehicleType VehicleType) bool {
-	return vehicleType != Car
+func IsTollFreeVehicle(vehicle Vehicle) bool {
+	return vehicle.VehicleType != Car
 }

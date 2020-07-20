@@ -29,6 +29,7 @@ type Vehicle struct {
 	CurrentDailyFee int
 }
 
+// IsTollFreeVehicle - Check if vehicle should pay toll
 func IsTollFreeVehicle(vehicle Vehicle) bool {
 	return vehicle.VehicleType != Car
 }

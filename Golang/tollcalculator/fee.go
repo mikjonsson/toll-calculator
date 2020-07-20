@@ -6,9 +6,9 @@ import "time"
 type SEK float32
 
 const (
-	// MaxDailyFee - fff
+	// MaxDailyFee - The most to be charged in a day in SEK
 	MaxDailyFee SEK = 60
-	// MaxChargeFrequencytMinutes - fff
+	// MaxChargeFrequencytMinutes - Minimum minutes between new charges
 	MaxChargeFrequencytMinutes = 60
 )
 

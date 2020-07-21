@@ -26,10 +26,11 @@ type Vehicle struct {
 	ID              uuid.UUID
 	VehicleType     VehicleType
 	LastCharged     time.Time
-	CurrentDailyFee int
+	LastFee         SEK
+	CurrentDailyFee SEK
 }
 
-// IsTollFreeVehicle - Check if vehicle should pay toll
+// IsTollFreeVehicle checks if vehicle should pay toll
 func IsTollFreeVehicle(vehicle Vehicle) bool {
 	return vehicle.VehicleType != Car
 }

@@ -1,13 +1,7 @@
 ## What's this?
 Similar to my Scala & Go example I'm just using this exercise to experiment with Kotlin.
 
-Don't expect updates or maintenance of this code...
+* First look at Kotlin ever
+* Experimented a bit with Kotest and it's support for Property-based testing 
 
-## How to
-
-
-## Todo
-
-
-## To consider
-
+Don't expect updates...
